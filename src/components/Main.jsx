@@ -1,9 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import Audios from "./audio";
 import Header from "./Header";
-import HomeIcon from '@mui/icons-material/Home';
-import QueueMusicIcon from '@mui/icons-material/QueueMusic';
-import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Paper } from "@mui/material";
 import { Box } from "@mui/system";
 
