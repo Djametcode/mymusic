@@ -30,9 +30,14 @@ const Main = () => {
     const Audio = ({links}) => {
         return (
             <Paper variant="contained" sx={{
-                backgroundColor: 'transparent'
+                backgroundColor: 'transparent',
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'center'
             }}>
-                <audio controls>
+                <audio style={{
+                    scale: '0.7'
+                }} controls >
                 <source src={links}/>
                 </audio>
             </Paper>
@@ -52,7 +57,8 @@ const Main = () => {
         const thumbnail = `https://api.napster.com/imageserver/v2/albums/${albumId}/images/356x237.jpg`;
         return (
             <Box sx={{
-                margin: '10px'
+                margin: '10px',
+                width: '250px'
             }}>
                  <Paper sx={{
                     display: 'flex',
@@ -62,7 +68,10 @@ const Main = () => {
                     backgroundImage: 'radial-gradient(circle, #344968, #3f7185, #649898, #9abdaa, #d8e1c4)'
                 }}>
                     <h1 id="header">{artistName}</h1>
-                    <img id="images" src={thumbnail} alt=""/>
+                        <div id="img-flex">
+                            <img id="images" src={thumbnail} alt=""/>
+                        </div>
+                    
                     <p id="title">{name}</p>
                     <Audio links = {previewURL}/>
                 </Paper>
@@ -79,13 +88,13 @@ const Main = () => {
 
     const Return = ({data}) => {
         return (
-            <a href="#">{data}</a>
+            <a key={data} href="#">{data}</a>
         )
     }
 
     const Bottombutton = () => {
         // const item = ['Beranda', 'Playlist', 'akun'];
-        const item = [<HomeIcon fontSize="large" color="primary"/>, <QueueMusicIcon fontSize="large" color="primary"/>, <AccountCircleIcon fontSize="large" color="primary"/>];
+        const item = ['Home', 'music'];
         const result = item.map((x) => <Return key={x} data ={x} />)
         return (
             <div id="homebtn">
@@ -108,8 +117,8 @@ const Main = () => {
     return (
         <ItemApp.Provider value={{data, setData}}>
             <Box sx={{
-
             }}>
+                <Header />
                 <Toplist />
                 <Item />
                 <Bottombutton />
