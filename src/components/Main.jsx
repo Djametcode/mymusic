@@ -1,5 +1,11 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
+import Audios from "./audio";
 import Header from "./Header";
+import HomeIcon from '@mui/icons-material/Home';
+import QueueMusicIcon from '@mui/icons-material/QueueMusic';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import { Paper } from "@mui/material";
+import { Box } from "@mui/system";
 
 const ItemApp = createContext(null)
 const Main = () => {
@@ -23,11 +29,13 @@ const Main = () => {
 
     const Audio = ({links}) => {
         return (
-            <div id="audio">
+            <Paper variant="contained" sx={{
+                backgroundColor: 'transparent'
+            }}>
                 <audio controls>
                 <source src={links}/>
                 </audio>
-            </div>
+            </Paper>
             
         )
     }
@@ -43,14 +51,22 @@ const Main = () => {
 
         const thumbnail = `https://api.napster.com/imageserver/v2/albums/${albumId}/images/356x237.jpg`;
         return (
-            <div id="tracks-flex">
-                <div id="tracks">
+            <Box sx={{
+                margin: '10px'
+            }}>
+                 <Paper sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    padding: '10px',
+                    backgroundImage: 'radial-gradient(circle, #344968, #3f7185, #649898, #9abdaa, #d8e1c4)'
+                }}>
                     <h1 id="header">{artistName}</h1>
                     <img id="images" src={thumbnail} alt=""/>
                     <p id="title">{name}</p>
                     <Audio links = {previewURL}/>
-                </div>
-            </div>
+                </Paper>
+            </Box>
             
         )
     }
@@ -68,8 +84,9 @@ const Main = () => {
     }
 
     const Bottombutton = () => {
-        const item = ['Beranda', 'Playlist', 'akun'];
-        const result = item.map((x) => <Return data ={x} />)
+        // const item = ['Beranda', 'Playlist', 'akun'];
+        const item = [<HomeIcon fontSize="large" color="primary"/>, <QueueMusicIcon fontSize="large" color="primary"/>, <AccountCircleIcon fontSize="large" color="primary"/>];
+        const result = item.map((x) => <Return key={x} data ={x} />)
         return (
             <div id="homebtn">
                 {result}
@@ -78,6 +95,7 @@ const Main = () => {
     }
 
     const Item = () => {
+        
         const { data, setData} = useContext(ItemApp);
         const result = data.map((item) => <List key={item.id} data = {item} />)
         return(
@@ -89,12 +107,13 @@ const Main = () => {
 
     return (
         <ItemApp.Provider value={{data, setData}}>
-            <div className="app">
-                <Header />
+            <Box sx={{
+
+            }}>
                 <Toplist />
                 <Item />
                 <Bottombutton />
-            </div>
+            </Box>
         </ItemApp.Provider>
 
     )
