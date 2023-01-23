@@ -1,14 +1,11 @@
 import React from "react";
 import { Link, Outlet } from "react-router-dom";
+import Main from "./components/Main";
 
 function App() {
   return (
     <div>
-      <h1>Hello world</h1>
-        <Link to={'/mains'}>Click Me</Link>
-      <div id="flex">
-        <Outlet />
-      </div>
+      <Main />
     </div>
   )
 }
