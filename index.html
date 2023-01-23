@@ -5,6 +5,87 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite + React</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Comic+Neue&family=Concert+One&family=Patrick+Hand&family=Prompt&display=swap" rel="stylesheet">
+    <style>
+      * {
+        font-family: 'Concert One', cursive;;
+      }
+      #header {
+        font-size: 25px;
+        text-align: center;
+      }
+      #flex {
+        display: flex;
+        flex-direction: row;
+        overflow: scroll;
+        margin-top: 30px;
+      }
+      #tracks {
+        background-color: #354259;
+        margin: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 500px;
+        border-radius: 10px;
+        color: seashell;
+      }
+      #images {
+        background-size: cover;
+        border-radius: 10px;
+      }
+      #audio {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-bottom: 20px;
+      }
+      #title {
+        text-align: center;
+      } 
+      body {
+        background-color: #7B8FA1;
+        margin: 0;
+      }
+      #heading {
+        background-color: #354259;
+        padding: 10px;
+        text-align: center;
+        margin: 10px;
+        border-radius: 10px;
+        color: seashell;
+      }
+      #info {
+        margin-left: 10px;
+        color: seashell;
+        margin-top: 35px;
+      }
+      #homebtn {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        background-color: #354259;
+        margin: 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      #homebtn a {
+        text-decoration: none;
+        color: seashell;
+        padding: 25px;
+        display: block;
+        width: 100%;
+        text-align: center;
+      }
+      #homebtn a:hover {
+        background-color: #7B8FA1;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
