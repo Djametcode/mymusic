@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 
 const Childs = () => {
     return (
-        <div className=" m-2 bg-white/30 p-2 rounded-xl">
+        <div className=" m-3 bg-white/30 p-3 rounded-xl">
             <p>Spotipeq adalah platform streaming musik dengan API feature</p>
             <p>Tenang saja gratis kok</p>
         </div>
@@ -11,7 +11,7 @@ const Childs = () => {
 
 const Child2 = () => {
     return (
-        <div className=" m-2 bg-white/30 p-2 rounded-xl">
+        <div className=" m-3 bg-white/30 p-3 rounded-xl">
             <p>Kamu nanya?</p>
             <p>Spotipeq sendiri dibuat oleh hacker terkenal Djamet coder, dengan skill cssnya </p>
         </div>
@@ -44,7 +44,7 @@ const Articels = () => {
     }
     return (
         <div>
-            <div className=" flex gap-5 bg-white/40 m-2 p-2 rounded-xl text-xl">
+            <div className=" flex gap-5 bg-white/40 m-3 p-2 rounded-xl text-xl">
                 <input className=" hidden" type="checkbox" name="checkbox" id="childs" ref={inputref} onClick={handleclick}/>
                 <label htmlFor="childs">{expand}</label>
                 <p>Apa itu SpotipeQ ?</p>
@@ -54,7 +54,7 @@ const Articels = () => {
                 <Childs />
             )}
             </div>
-            <div className=" flex gap-5 bg-white/40 m-2 p-2 rounded-xl text-xl">
+            <div className=" flex gap-5 bg-white/40 m-3 p-2 rounded-xl text-xl">
                 <input className=" hidden" type="checkbox" name="checkbox" id="childs2" ref={inputref} onClick={handleclick2}/>
                 <label htmlFor="childs2">{expand2}</label>
                 <p>Siapa owner SpotipeQ ?</p>
@@ -70,7 +70,7 @@ const Articels = () => {
 
 const Articel = () => {
     return (
-        <div className=" h-96 pb-10 mt-15">
+        <div className=" mt-15">
             <Articels />
         </div>
     )
