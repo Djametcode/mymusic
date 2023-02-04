@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Beranda = () => {
     return (
-        <a className=" block p-3 w-full" href="#">Beranda</a>
-    )
-}
+        <Link to={'/'} className=" block p-3 w-full">Beranda</Link>
+        )
+    }
 
 const Playing = () => {
     return (
@@ -14,7 +15,7 @@ const Playing = () => {
     
 const Profil = () => {
     return (
-        <a className=" block p-3 w-full" href="#">Profil</a>
+        <Link to={'/profile'} className=" block p-3 w-full" >Profil</Link>
     )
 }
 const Navbar = () => {

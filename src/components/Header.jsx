@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 
 const Navss = () => {
   return (
-    <p>Hello</p>
+    <p className=" text-sm">Hello</p>
   )
 }
 

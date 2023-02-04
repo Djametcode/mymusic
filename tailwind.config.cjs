@@ -6,6 +6,9 @@ module.exports = {
     extend: {
       fontFamily: {
         'cursive': ['Concert One', 'cursive']
+      },
+      backgroundImage: {
+        'user': "url('./img/user (1).png')"
       }
     },
   },
